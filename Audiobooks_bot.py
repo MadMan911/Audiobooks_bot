@@ -1,7 +1,7 @@
-from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, CallbackContext  # python-telegram-bot-raw
-from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove  # python-telegram-bot
-import telebot
-from gtts import gTTS  # gTTS
+from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, CallbackContext  # pip3 install python-telegram-bot-raw
+from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove  # pip3 install python-telegram-bot
+import telebot # pip3 install telebot
+from gtts import gTTS  # pip3 install gTTS
 import random  # import random # import sys # import wx # import pygame # import os
 import re
 import os
