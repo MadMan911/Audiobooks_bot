@@ -1,7 +1,7 @@
-from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, CallbackContext  # pip3 install python-telegram-bot-raw
-from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove  # pip3 install python-telegram-bot
-import telebot # pip3 install telebot
-from gtts import gTTS  # pip3 install gTTS
+from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, CallbackContext  # python-telegram-bot-raw
+from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove  # python-telegram-bot
+import telebot
+from gtts import gTTS  # gTTS
 import random  # import random # import sys # import wx # import pygame # import os
 import re
 import os
@@ -45,6 +45,9 @@ def converter_str_mp3():  # конвертер str в mp3    кнопка не �
 
 
 def main_menu(update, context: CallbackContext):
+    '''
+    Главное миню, откуда доступны все фичи бота
+    '''
     update.message.reply_text('Добро пожаловать в главное меню.\n',
                               reply_markup=markup_main_menu)  # клавиатура главное меню
 
@@ -76,6 +79,9 @@ def guess_game(update, context: CallbackContext):
 
 
 def game_colour(update, context: CallbackContext):
+    '''
+    Игра "Черное-Белое", где вы сможете испытать свою удачу и интуицию.
+    '''
     a = [1, 2]
     random.seed(version=2)
     a = random.choice(a)
@@ -108,7 +114,7 @@ def echo(update, context: CallbackContext):
         update.message.text = update.message.text.replace(simbs[i], '')
     hellos = ['привет', 'здорова', 'хеллоу', 'hello', 'hi', 'салам', 'хай', 'дороу', 'приветик', 'доброе утро',
               'добрый день', 'добрый вечер']
-#     hellos_bb = ['Привет!', 'Здравствуй!', 'Доброго времени суток!']
+    # hellos_bb = ['Привет!', 'Здравствуй!', 'Доброго времени суток!']
     hellos_bb = ['Здравствуйте!']
     if update.message.text.lower() in hellos:
         update.message.reply_text(random.choice(hellos_bb))
@@ -152,8 +158,6 @@ def echo_document(update, context: CallbackContext):
     a = ['C:/audio_book/'] + name + ['.mp3']
     direct = ''.join(a)
     os.rename(r'C:\audio_book\1.mp3', direct)
-    # with open(r'C:\audio_book\1.mp3') as f:
-    #     f.save(direct)
     update.message.reply_text(
         'Ваша аудиокнига ' + '"' + update.message.document.file_name + '"',
         reply_markup=markup)
