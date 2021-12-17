@@ -6,7 +6,7 @@ import random  # import random # import sys # import wx # import pygame # import
 import re
 import os
 
-botToken = '5015096329:AAHqxoNdAEXjD6Y3lqaXZIFfNnC7OLTYV9U'
+botToken = ''
 bot = telebot.TeleBot(botToken, parse_mode=None)
 
 
