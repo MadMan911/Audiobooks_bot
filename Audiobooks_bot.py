@@ -108,7 +108,8 @@ def echo(update, context: CallbackContext):
         update.message.text = update.message.text.replace(simbs[i], '')
     hellos = ['привет', 'здорова', 'хеллоу', 'hello', 'hi', 'салам', 'хай', 'дороу', 'приветик', 'доброе утро',
               'добрый день', 'добрый вечер']
-    hellos_bb = ['Привет!', 'Здравствуй!', 'Доброго времени суток!']
+#     hellos_bb = ['Привет!', 'Здравствуй!', 'Доброго времени суток!']
+    hellos_bb = ['Здравствуйте!']
     if update.message.text.lower() in hellos:
         update.message.reply_text(random.choice(hellos_bb))
     else:
