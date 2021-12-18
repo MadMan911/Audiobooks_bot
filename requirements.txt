@@ -1,12 +1,4 @@
-python-telegram-bot-raw
-python-telegram-bot
-gTTS
-telegram
-telebot
-telethon
-gTTs
-#random
-#re
-#os
-#unitest
-#time
+python-telegram-bot==13.9
+Telethon==1.23.0
+gTTS==2.2.3
+pyTelegramBotAPI==4.1.1
