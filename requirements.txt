@@ -1,3 +1,6 @@
+python-telegram-bot-raw
+python-telegram-bot
+gTTS
 telegram
 telebot
 telethon
