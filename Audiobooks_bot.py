@@ -14,7 +14,7 @@ bot = telebot.TeleBot(botToken, parse_mode=None)
 @bot.message_handler(commands=['start'])
 def id_of_chat(message):
     '''
-    функция возвращает idчата
+    функция возвращает id чата
     нужно, чтобы чможно было отправить пользователю файл с книгой
     '''
     chat_id = message.chat.id
