@@ -3,8 +3,6 @@ from telethon.tl.functions.channels import GetMessagesRequest
 import unittest
 import time
 
-
-
 api_id= int('')
 api_hash = ""
 client = TelegramClient('session_name', api_id, api_hash)
@@ -25,6 +23,8 @@ class audiobook_test(unittest.TestCase):
             self.assertRegex(m, text)
         except:
             self.assertFalse(True)
+            
+            
     def test_hello(self):
         try:
             client.send_message('@Assistant_with_audio_books_bot', 'Привет')
@@ -39,7 +39,7 @@ class audiobook_test(unittest.TestCase):
             self.assertFalse(True, f'Я не вполне понимаю о чем вы. \n''хотите увидеть мой функционал, напишите команду /help. \n')
 
 
-    def test_help(self):
+        def test_help(self):
         try:
             client.send_message('@Assistant_with_audio_books_bot', '/help')
             time.sleep(2)
@@ -52,6 +52,7 @@ class audiobook_test(unittest.TestCase):
         except:
             self.assertFalse(True)
 
+            
     def test_game(self):
         try:
             client.send_message('@Assistant_with_audio_books_bot', '/game')
@@ -64,6 +65,7 @@ class audiobook_test(unittest.TestCase):
             self.assertRegex(m, text)
         except:
             self.assertFalse(True)
+  
 
     def test_audio(self):
         try:
