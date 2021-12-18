@@ -3,7 +3,7 @@ from telethon.tl.functions.channels import GetMessagesRequest
 import unittest
 import time
 
-api_id= int('5015096329:AAHqxoNdAEXjD6Y3lqaXZIFfNnC7OLTYV9U')
+api_id= int('')  
 api_hash = ""
 client = TelegramClient('session_name', api_id, api_hash)
 
