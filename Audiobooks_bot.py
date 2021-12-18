@@ -4,9 +4,10 @@ import telebot
 from gtts import gTTS  # gTTS
 import random  # import random # import sys # import wx # import pygame # import os
 import re
+from Token import BotToken as botToken
 import os
 
-botToken = '5015096329:AAHqxoNdAEXjD6Y3lqaXZIFfNnC7OLTYV9U'
+
 bot = telebot.TeleBot(botToken, parse_mode=None)
 
 
@@ -173,7 +174,7 @@ def echo_document(update, context: CallbackContext):
 
 def echo_document_not_txt(update, context: CallbackContext):
     '''
-    функция обрабатывает сообщения с не txt документами, которые присылает пользователь.
+    функция обрабатывает сообщения с "не txt" документами, которые присылает пользователь.
     Просит прислать txt документ
     '''
     update.message.reply_text(
@@ -182,11 +183,11 @@ def echo_document_not_txt(update, context: CallbackContext):
         reply_markup=markup)
 
 
-botToken = '5015096329:AAHqxoNdAEXjD6Y3lqaXZIFfNnC7OLTYV9U'
 updater = Updater(botToken)
 
 dp = updater.dispatcher
 
+# создание и назначение клавиатур
 reply_keyboard = [['/help', '/main']]
 first_keyboard = [['/help']]
 main_menu_keyboard = [['/help', '/game'],
