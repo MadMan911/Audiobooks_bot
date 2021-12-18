@@ -25,7 +25,7 @@ def converter_txt_str():  # конвертер txt в str   кнопка не н
     '''
     конвертирует txt в строку
     '''
-    text = open(r'C:\audio_book\1.txt', encoding='utf-8').read()
+    text = open(r'audio_book/1.txt', encoding='utf-8').read()
     text1 = re.split(r'\n', text)
     result = ''
     for ch in text1:
@@ -39,7 +39,7 @@ def converter_str_mp3():  # конвертер str в mp3    кнопка не �
     взаимодействует с функцией convert_txt_str
     озвучивает txt файл и создает mp3
     '''
-    audio = r'C:\audio_book\1.mp3'  # поменять имя файла на входящее
+    audio = r'audio_book/1.mp3'  # поменять имя файла на входящее
     language = 'ru'
     sp = gTTS(text=converter_txt_str(), lang=language, slow=False)
     sp.save(audio)
@@ -153,17 +153,17 @@ def echo_document(update, context: CallbackContext):
     функция обрабатывает
     '''
     file = context.bot.get_file(update.message.document)
-    file.download(r'C:\audio_book\1.txt')
+    file.download(r'audio_book/1.txt')
     converter_str_mp3()
     name = update.message.document.file_name.split('.')[:-1]
-    a = ['C:/audio_book/'] + name + ['.mp3']
+    a = ['audio_book/'] + name + ['.mp3']
     direct = ''.join(a)
-    os.rename(r'C:\audio_book\1.mp3', direct)
+    os.rename(r'audio_book/1.mp3', direct)
     update.message.reply_text(
         'Ваша аудиокнига ' + '"' + update.message.document.file_name + '"',
         reply_markup=markup)
     bot.send_audio(id_of_chat(update.message), audio=open(direct, 'rb'))
-    os.remove(r'C:\audio_book\1.txt')
+    os.remove(r'audio_book/1.txt')
     os.remove(direct)
     update.message.reply_text('вы можете:\n'
                               'вернуться в главное меню /menu.\n'
