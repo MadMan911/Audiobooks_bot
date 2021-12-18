@@ -14,8 +14,8 @@ bot = telebot.TeleBot(botToken, parse_mode=None)
 @bot.message_handler(commands=['start'])
 def id_of_chat(message):
     '''
-    функция возвращает id чата
-    нужно, чтобы чможно было отправить пользователю файл с книгой
+    функция возвращает idчата
+    нужно, чтобы можно было отправить пользователю файл с книгой
     '''
     chat_id = message.chat.id
     return (chat_id)
@@ -226,3 +226,4 @@ dp.add_handler(document_handler)
 if __name__ == '__main__':
     updater.start_polling()
     updater.idle()
+
