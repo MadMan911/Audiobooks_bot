@@ -14,6 +14,9 @@ client.start()
 
 
 class audiobook_test(unittest.TestCase):
+    '''
+    тесты для функций бота
+    '''
     def test_start(self):
         try:
             client.send_message('@Assistant_with_audio_books_bot', '/start')
